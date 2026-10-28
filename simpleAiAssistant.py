@@ -9,7 +9,10 @@ client = OpenAI(
     base_url = os.getenv("BASE_URL"),
     api_key = os.getenv("API_KEY")
 )
-messages = []
+messages = [{
+    "role" : "system",
+    "content" : "Act like a very humble agent and always respond under 20 words."
+}]
 while True:
     user_input = input("\nPritam : ")
     if user_input.lower() in ["exit", "quit"]:
